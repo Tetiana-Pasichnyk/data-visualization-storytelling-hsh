@@ -10,33 +10,9 @@ This document analyzes three matplotlib notebooks and proposes a logical structu
 
 ### 1. Kopie_von_Intro_to_matplotlib.ipynb (4861 lines)
 
-**Language:** English  
+**Language:** English/German  
 **Style:** Comprehensive, academic, reference-style  
 **Target Audience:** Intermediate to advanced users
-
-#### Main Sections:
-1. **Introduction & Setup** - Imports, Jupyter shortcuts, basic concepts
-2. **Compatible Data Types** - NumPy arrays, lists, Pandas integration
-3. **Two Interfaces** - MATLAB-like vs. Object-Oriented (OO) approach
-4. **Figures and Subplots** - Anatomy of figures, creating subplots
-5. **Axes Concepts** - Understanding the axes hierarchy
-6. **Simple Scatterplots** - Line charts vs. scatter plots
-7. **Multiple Panels** - Creating multi-panel figures
-8. **Figure Configuration** - Size, aspect ratio, DPI
-9. **Saving Figures** - Export formats and options
-10. **OO vs MATLAB Syntax** - Detailed comparison
-11. **Scatterplot Variations** - Using `plt.scatter()` vs `plt.plot()`
-12. **Labels and Legends** - Adding and positioning legends
-13. **Formatting** - LaTeX, rcParams, plot styles
-14. **Colors and Line Styles** - Customization options
-15. **Axis Appearance** - Logarithmic scale, tick placement, scientific notation
-
-#### Strengths:
-- Most comprehensive coverage of matplotlib concepts
-- Excellent explanation of figure anatomy
-- Strong focus on OO interface
-- Detailed formatting and customization options
-- Good coverage of rcParams and styles
 
 #### Weaknesses:
 - Can be overwhelming for beginners
@@ -50,36 +26,6 @@ This document analyzes three matplotlib notebooks and proposes a logical structu
 **Language:** German (Deutsch)  
 **Style:** Educational, concept-focused, FAQ-style  
 **Target Audience:** Beginners with specific conceptual questions
-
-#### Main Sections:
-1. **np.linspace() Explanation** - Understanding evenly spaced points
-2. **plt.show() vs fig.show()** - Critical distinction explained
-3. **Figure and Axes Architecture** - Hierarchy and relationships
-4. **Automatic Axes Creation** - How matplotlib creates axes implicitly
-5. **Understanding Ticks** - Comprehensive tick explanation
-   - Automatic ticks
-   - Manual tick setting
-   - Using linspace for ticks
-   - Tick label customization
-   - Practical intensity chart example
-6. **Visualization: Smooth Curves** - Why more points = smoother curves
-7. **Multiple Subplots Example** - Practical multi-axes figure
-8. **Manual Axis Limits** - Controlling xlim/ylim
-9. **Arrays vs Lists** - Why NumPy arrays matter
-   - Element-wise operations
-   - Mathematical operations
-   - Mathematical functions
-   - Performance comparison
-10. **Practical Growth Curve Example** - Applying concepts
-11. **Quiz Section** - Self-assessment questions
-
-#### Strengths:
-- Excellent conceptual explanations (especially ticks and linspace)
-- Addresses common beginner confusion points
-- Strong focus on "why" not just "how"
-- Performance comparisons (arrays vs lists)
-- Interactive quiz for self-assessment
-- Clear visual examples
 
 #### Weaknesses:
 - Written in German (needs translation for English course)

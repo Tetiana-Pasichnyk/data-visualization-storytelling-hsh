@@ -3,7 +3,7 @@
 
 **Course Type:** Elective  
 **ECTS:** 5  
-**Semester:** 4-6  
+**Semester:** 4-6  (Mid/Intermediate or Advanced Stage of studies)
 **Language:** German  
 **Format:** In-person with practical exercises  
 **Created:** April 2026
@@ -30,7 +30,7 @@ After successful completion, students can:
 
 ### Technical Competencies
 1. ✓ Create professional visualizations with Python (Matplotlib, Seaborn, Plotly)
-2. ✓ Develop interactive dashboards (Streamlit, Bokeh)
+2. ✓ Develop interactive dashboards (Plotly, Streamlit, Bokeh)
 3. ✓ Integrate various data sources (CSV, JSON, SQL, APIs)
 4. ✓ Use BI tools fundamentally (Power BI, Tableau)
 
@@ -53,7 +53,7 @@ After successful completion, students can:
 The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90 minutes each).
 
 ### Block 1: Introduction & Fundamentals
-**Duration:** 1 day (270 min = 3 units)  
+**Duration:** 3 days (270 min = 3 units)  
 **Focus:** Orientation, setup, first visualizations
 
 **Learning Objectives:**
@@ -63,7 +63,7 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Use data sources (Kaggle, CSV, JSON)
 
 ### Block 2: Data Representations & Seaborn I
-**Duration:** 1 day (270 min = 3 units)  
+**Duration:** 3 days (270 min = 3 units)  
 **Focus:** Matplotlib basics, Seaborn introduction
 
 **Learning Objectives:**
@@ -73,7 +73,7 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Visualize statistical metrics
 
 ### Block 3: Focus I - Specialized Visualizations
-**Duration:** 1 day (270 min = 3 units)  
+**Duration:** 3 days (270 min = 3 units)  
 **Focus:** Advanced techniques, Tufte principles
 
 **Learning Objectives:**
@@ -82,14 +82,14 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Apply Tufte principles
 - Analyze real data
 
-### Block 4: Plotly I & Bokeh
-**Duration:** 1 day (270 min = 3 units)  
+### Block 4: Plotly I (and/or Bokeh)
+**Duration:** 2 day (270 min = 3 units)  
 **Focus:** Interactive visualizations
 
 **Learning Objectives:**
 - Understand and use interactivity
 - Use Plotly Express
-- Create Bokeh plots
+//- Create Bokeh plots
 - Export HTML visualizations
 
 ### Block 5: Accessibility I - Best Practices
@@ -112,25 +112,7 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Communicate appropriately for target audiences
 - Master presentation techniques
 
-### Block 7: Research I
-**Duration:** 1 day (270 min = 3 units)  
-**Focus:** ML visualization, EDA
-
-**Learning Objectives:**
-- Visualize ML metrics (Confusion Matrix, ROC)
-- Reduce high-dimensional data (t-SNE, UMAP)
-- Perform EDA
-- Create research visualizations
-
-### Block 8: Dashboard I
-**Duration:** 1 day (270 min = 3 units)  
-**Focus:** Dashboard design, Streamlit
-
-**Learning Objectives:**
-- Understand dashboard principles
-- Use Streamlit
-- Create interactive dashboards
-- Deploy dashboards
+... 
 
 ### Block 9: Advanced Tools II
 **Duration:** 1 day (270 min = 3 units)  
@@ -145,33 +127,6 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 **Detailed block descriptions:** See [BLOCKS_SUMMARY.md](BLOCKS_SUMMARY.md)
 
 ---
-
-## 🗓️ Time Planning Options
-
-The course is modular and can be offered in different formats:
-
-### Option 1: Full Semester (recommended)
-- **Duration:** 11 weeks
-- **Format:** 1 block per week
-- **Effort:** ~15 hours/week (incl. assignments)
-- **Total:** ~150 hours
-
-### Option 2: Intensive Course
-- **Duration:** 4 weeks
-- **Format:** 3 blocks per week
-- **Effort:** ~30 hours/week
-- **Total:** ~120 hours
-
-### Option 3: Weekend Workshop
-- **Duration:** 4 weekends
-- **Format:** 2-3 blocks per weekend
-- **Effort:** ~25 hours/weekend
-- **Total:** ~100 hours
-
-**Full details:** See [`optional/MODULARITAET.md`](optional/MODULARITAET.md)
-
----
-
 ## 📋 Prerequisites
 
 ### Technical Prerequisites
@@ -232,7 +187,7 @@ pip install matplotlib seaborn plotly pandas numpy jupyter
 **Requirements:**
 - Own dataset (Kaggle, own data, public APIs)
 - At least 5-7 different visualizations
-- Interactive dashboard (Streamlit or similar)
+- Interactive dashboard (Plotly or similar)
 - Storytelling narrative
 - WCAG AA compliant
 - Complete documentation
@@ -280,20 +235,21 @@ pip install matplotlib seaborn plotly pandas numpy jupyter
 The course offers different learning paths for different career goals:
 
 ### Python Developer Path (6 blocks)
-**Blocks:** 1, 2, 3, 4, 7, 8  
+**Blocks:** 1, 2, 3, 4,    7, 8  
 **Focus:** Programming, Automation  
 **Project:** Automated reporting dashboard
 
 ### Business Analyst Path (5 blocks)
-**Blocks:** 1, 2, 5, 6, 9  
+**Blocks:** 1, 2, 5,   6, 9  
 **Focus:** Storytelling, BI tools  
 **Project:** Business presentation with data
 
 ### Data Scientist Path (5 blocks)
-**Blocks:** 1, 2, 3, 5, 7  
+**Blocks:** 1, 2, 3, 5,  7  
 **Focus:** Research, ML visualization  
 **Project:** ML model analysis and interpretation
 
+6 (Storytelling), 7 (Research), 8 (Dashboarding)
 ### Full-Stack Path (9 blocks)
 **Blocks:** 1-9 (complete)  
 **Focus:** All aspects  
@@ -349,10 +305,8 @@ The course offers different learning paths for different career goals:
 
 ## 📝 Contact
 
-**Instructor:** [Insert name]  
-**Email:** [email@hsh.de]  
-**Office:** [Room number]  
-**Office Hours:** [Time and location]
+**Instructor:** [Andrea Rachetta]  
+**Email:** [andrea.rachetta@hs-hannover.de]  
 
 **Course Website:** [URL]  
 **Moodle:** [Course link]  

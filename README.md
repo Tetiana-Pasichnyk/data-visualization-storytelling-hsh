@@ -20,7 +20,7 @@ Welcome to the "Data Visualization & Storytelling" course at Hochschule Hannover
 2. Check [COURSE_OVERVIEW.md](COURSE_OVERVIEW.md) for visual representation
 3. Review [BLOCKS_SUMMARY.md](BLOCKS_SUMMARY.md) for all 9 blocks
 4. Start with the notebooks in the `notebooks/` folder
-5. Follow along with lessons in the `lessons/` folder
+5. Follow along with weekly materials in the `weeks/` folder
 
 ### For Instructors
 📖 **Detailed instructor materials available in [`optional/README.md`](optional/README.md)**
@@ -113,6 +113,18 @@ Available in the `notebooks/` folder:
 - `matplotlib_vs_seaborn.ipynb` (Block 2)
 - `color_accessibility_guide.ipynb` (Block 5)
 
+### Course Materials (NEW!)
+Available in the `weeks/` and `fundamentals/` folders:
+
+**Week Materials:**
+- `weeks/week-1/storytelling_leitfaden_b1.md` - Storytelling guide (B1 German level)
+- `weeks/week-2/exercises/gruppenaufgaben_diagramme.md` - Group exercises for data storytelling
+
+**Fundamentals:**
+- `fundamentals/matplotlib_parameter_reference.md` - Complete parameter reference for Matplotlib
+
+**Note:** Course is organized by weeks, with each week covering specific blocks
+
 ---
 
 ## 🚀 Getting Started
@@ -125,6 +137,7 @@ Available in the `notebooks/` folder:
    - [ ] Test Jupyter Notebook
    - [ ] Create Kaggle account
    - [ ] Read COURSE_STRUCTURE.md
+   - [ ] Review `storytelling_leitfaden_b1.md` for storytelling basics
 
 2. **During the course:**
    - [ ] Attend all sessions
@@ -132,6 +145,7 @@ Available in the `notebooks/` folder:
    - [ ] Complete assignments on time
    - [ ] Use office hours
    - [ ] Form peer learning groups
+   - [ ] Use `matplotlib_parameter_reference.md` as quick reference
 
 ---
 
@@ -241,9 +255,16 @@ Special thanks to:
 
 ---
 
-**Version:** 1.0  
-**Last Updated:** April 2026  
+**Version:** 1.1
+**Last Updated:** April 23, 2026
 **Status:** Ready for implementation
+
+### Recent Updates (v1.1)
+- ✅ Added group exercises for data storytelling (`gruppenaufgaben_diagramme.md`)
+- ✅ Added storytelling guide for B1 German learners (`storytelling_leitfaden_b1.md`)
+- ✅ Added comprehensive Matplotlib parameter reference (`matplotlib_parameter_reference.md`)
+- ✅ Integrated Perceiving → Interpreting → Comprehending framework
+- ✅ Added Context + Intrigue framework for storytelling
 
 ---
 

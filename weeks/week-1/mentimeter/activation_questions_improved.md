@@ -19,9 +19,6 @@ Diese Version behebt folgende Probleme:
 5. **Wichtig:** Nutze die Ergebnisse aktiv für die Diskussion!
 
 ---
-
-## Frage 1: Multiple Choice - Konkrete Erfahrung
-
 **Typ:** Multiple Choice (Mehrfachauswahl)  
 **Frage:** "Mit welchen dieser Tools hast du bereits Datenvisualisierungen erstellt?"
 
@@ -32,16 +29,6 @@ Diese Version behebt folgende Probleme:
 - [ ] Tableau / Power BI
 - [ ] JavaScript (D3.js/Chart.js)
 - [ ] Noch keine - das ist mein erster Kurs dazu
-
-**Zweck:** 
-- Konkreter Kenntnisstand statt vager "Erfahrung"
-- Zeigt Tool-Landschaft der Gruppe
-- Hilft bei Tempo-Anpassung
-
-**Verbesserung gegenüber Alt:**
-- ✅ Konkrete Tools statt "Welche Tools?"
-- ✅ Option "Noch keine" für Anfänger
-- ✅ Zeigt echte Praxiserfahrung
 
 ---
 
@@ -66,34 +53,6 @@ Diese Version behebt folgende Probleme:
 - ✅ Fokus auf "Sicherheit" statt nur "Kenntnisse"
 
 ---
-
-## Frage 3: Image Choice - Welches Diagramm ist besser?
-
-**Typ:** Image Choice  
-**Frage:** "Welches dieser beiden Diagramme findest du besser - und warum?"
-
-**Bilder:**
-- **Bild A:** Balkendiagramm mit 3D-Effekten, Schatten, bunten Farben, Hintergrundmuster
-- **Bild B:** Minimalistisches Balkendiagramm (Tufte-Style) - klare Achsen, keine Dekoration
-
-**Nach der Abstimmung - Diskussionsfrage:**
-"Was macht Bild B besser als Bild A?"
-
-**Erwartete Antworten:**
-- Einfacher zu lesen
-- Keine Ablenkung
-- Fokus auf Daten
-- Professioneller
-
-**Zweck:** 
-- Visuelles Verständnis für gutes Design entwickeln
-- Tufte-Prinzipien praktisch erleben
-- Diskussion über "schön" vs. "funktional"
-
-**Verbesserung gegenüber Alt:**
-- ✅ Konkrete Bilder statt abstrakte Frage
-- ✅ Diskussionsanlass statt nur Abstimmung
-- ✅ Zeigt Chartjunk praktisch
 
 ---
 
@@ -120,31 +79,6 @@ Diese Version behebt folgende Probleme:
 - ✅ Macht Relevanz sichtbar
 
 ---
-
-## Frage 5: Multiple Choice - Visualisierungstechniken
-
-**Typ:** Multiple Choice (Mehrfachauswahl)  
-**Frage:** "Welche dieser Visualisierungstechniken kennst du bereits?"
-
-**Optionen:**
-- [ ] Scatter Plot (Streudiagramm)
-- [ ] Histogramm
-- [ ] Boxplot
-- [ ] Heatmap
-- [ ] Violinplot
-- [ ] PCA-Visualisierung
-- [ ] t-SNE
-- [ ] Keine davon
-
-**Zweck:** 
-- Vorwissen zu Plot-Typen erfassen
-- Zeigt, welche Techniken neu sind
-- Hilft bei Auswahl der Beispiele
-
-**Verbesserung gegenüber Alt:**
-- ✅ Konkrete Techniken statt "Habt ihr davon gehört?"
-- ✅ Zeigt echtes Wissen, nicht nur "gehört"
-- ✅ Option "Keine davon" für Ehrlichkeit
 
 ---
 
@@ -204,11 +138,6 @@ Diese Version behebt folgende Probleme:
 **Typ:** Word Cloud  
 **Frage:** "Was findest du an Datenvisualisierung am schwierigsten?"
 
-**Zweck:** 
-- Probleme und Unsicherheiten sichtbar machen
-- Zeigt, wo Unterstützung nötig ist
-- Hilft bei Schwerpunktsetzung
-
 **Erwartete Begriffe:**
 - Plot-Auswahl
 - Farben
@@ -217,27 +146,7 @@ Diese Version behebt folgende Probleme:
 - Design
 - Achsenbeschriftung
 - Statistik
-
-**Verbesserung gegenüber Alt:**
-- ✅ Fokus auf Herausforderungen statt generische "Was fällt dir ein?"
-- ✅ Zeigt echte Lernbedarfe
-- ✅ Macht Unsicherheiten sichtbar
-
 ---
-
-## Timing-Empfehlungen
-
-| Frage | Zeit | Aktivität |
-|-------|------|-----------|
-| 1 | 1 Min | Abstimmen |
-| 2 | 1 Min | Abstimmen |
-| 3 | 2 Min | Abstimmen + kurze Diskussion |
-| 4 | 2 Min | Antworten + 2-3 vorlesen |
-| 5 | 1 Min | Abstimmen |
-| 6 | 2 Min | Sortieren + Diskussion |
-| 7 | 1 Min | Abstimmen |
-| 8 | 1 Min | Word Cloud erstellen |
-
 **Gesamt:** ~11 Minuten
 
 ---
