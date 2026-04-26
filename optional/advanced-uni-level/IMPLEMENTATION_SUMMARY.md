@@ -2,7 +2,7 @@
 ## Data Visualization & Storytelling Kurs - HsH
 
 **Erstellt:** April 2026  
-**Status:** Bereit für Implementierung
+**Status:** Bereit für Implementierung -> Wenn Kurs Web Development Vorkenntnisse hat
 
 ---
 

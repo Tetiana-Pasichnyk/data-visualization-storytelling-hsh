@@ -5,23 +5,6 @@
 
 ---
 
-## 📊 Vergleichsmatrix
-
-| Tool | Typ | Lernkurve | Flexibilität | Interaktivität | Kosten | Use Case |
-|------|-----|-----------|--------------|-----------------|--------|----------|
-| **Matplotlib** | Python | Mittel-Hoch | ⭐⭐⭐⭐⭐ | ⭐☆☆☆☆ | Kostenlos | Wissenschaftliche Publikationen |
-| **Seaborn** | Python | Niedrig | ⭐⭐⭐☆☆ | ⭐☆☆☆☆ | Kostenlos | Statistische Analysen |
-| **Plotly** | Python/JS | Niedrig-Mittel | ⭐⭐⭐⭐☆ | ⭐⭐⭐⭐⭐ | Kostenlos/Pro | Interaktive Dashboards |
-| **Bokeh** | Python | Mittel | ⭐⭐⭐⭐☆ | ⭐⭐⭐⭐☆ | Kostenlos | Server-Apps, Widgets |
-| **Streamlit** | Python | Niedrig | ⭐⭐⭐☆☆ | ⭐⭐⭐⭐☆ | Kostenlos | Rapid Prototyping |
-| **Dash** | Python | Mittel-Hoch | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Kostenlos/Enterprise | Production Dashboards |
-| **Power BI** | BI-Tool | Niedrig-Mittel | ⭐⭐⭐☆☆ | ⭐⭐⭐⭐☆ | Pro: €10/Monat | Business Intelligence |
-| **Tableau** | BI-Tool | Niedrig | ⭐⭐⭐☆☆ | ⭐⭐⭐⭐⭐ | Creator: $70/Monat | Business Dashboards |
-| **Excel** | Spreadsheet | Sehr Niedrig | ⭐⭐☆☆☆ | ⭐☆☆☆☆ | Office 365 | Schnelle Analysen |
-| **D3.js** | JavaScript | Sehr Hoch | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Kostenlos | Custom Web-Viz |
-
----
-
 ## 🔍 Detaillierter Vergleich
 
 ### Matplotlib

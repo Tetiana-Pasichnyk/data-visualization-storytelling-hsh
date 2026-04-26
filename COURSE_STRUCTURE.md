@@ -17,7 +17,9 @@ This course teaches the ability to visualize data convincingly and communicate d
 ### Why This Course?
 
 In a data-driven world, the ability to visually prepare and communicate information is crucial. This course combines:
-- **Technical Skills:** Python libraries (Matplotlib, Seaborn, Plotly)
+- **Technical Skills:** Python libraries (Matplotlib, Seaborn, Plotly) object oriented thinking - IN DETAIL
+
+Additionally:
 - **Design Principles:** Edward Tufte, WCAG standards, Accessibility
 - **Communication:** Storytelling, presentation techniques
 - **Practice:** Real datasets, interactive dashboards, BI tools
@@ -62,19 +64,19 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Create first plots with Matplotlib
 - Use data sources (Kaggle, CSV, JSON)
 
-### Block 2: Data Representations & Seaborn I
+### Block 2-3: Data Representations & Seaborn I
 **Duration:** 3 days (270 min = 3 units)  
 **Focus:** Matplotlib basics, Seaborn introduction
 
 **Learning Objectives:**
 - Understand Matplotlib Figure-Axes architecture
-- Use Seaborn for statistical plots
-- Choose scales correctly (linear, logarithmic)
+- Show Seaborn for statistical plots
+- //Choose scales correctly (linear, logarithmic)
 - Visualize statistical metrics
 
-### Block 3: Focus I - Specialized Visualizations
+### Block 4 or 8: Focus I - Specialized Visualizations
 **Duration:** 3 days (270 min = 3 units)  
-**Focus:** Advanced techniques, Tufte principles
+**Focus:** Advanced techniques -> Tufte principles
 
 **Learning Objectives:**
 - Create complex layouts (Subplots, Grids)
@@ -82,7 +84,16 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Apply Tufte principles
 - Analyze real data
 
-### Block 4: Plotly I (and/or Bokeh)
+### Block 5: Data Representations & Own Configuration of AI Generated Plots
+**Duration:** 3 days (270 min = 3 units)  
+**Focus:** Matplotlib basics, Seaborn introduction
+
+**Learning Objectives:**
+- Understand and configureMatplotlib Figure-Axes architecture
+- Applying Storytelling or specialized plot knowledge in a "new story"
+- Explain statistical metrics
+
+### Block 6: Plotly I (and/or Bokeh)
 **Duration:** 2 day (270 min = 3 units)  
 **Focus:** Interactive visualizations
 
@@ -92,7 +103,7 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 //- Create Bokeh plots
 - Export HTML visualizations
 
-### Block 5: Accessibility I - Best Practices
+### Block 7: Accessibility I - Best Practices
 **Duration:** 1 day (270 min = 3 units)  
 **Focus:** WCAG standards, inclusive design
 
@@ -102,7 +113,7 @@ The course consists of **9 teaching blocks** (1 day each) with **2-3 units** (90
 - Test contrast ratios
 - Create accessible visualizations
 
-### Block 6: Storytelling I
+### Block 8 or 4: Storytelling I
 **Duration:** 1 day (270 min = 3 units)  
 **Focus:** Narrative structures, communication
 
@@ -154,6 +165,8 @@ conda activate dataviz
 # Core libraries
 pip install matplotlib seaborn plotly pandas numpy jupyter
 ```
+
+Also recommended following [./job_scraper/INSTALLATION.md](./job_scraper/INSTALLATION.md)
 
 ### Alternative: Google Colab
 - Free: https://colab.research.google.com
@@ -332,4 +345,4 @@ The course offers different learning paths for different career goals:
 
 ---
 
-*This course was developed to equip students with the most important skills for data-driven communication. Good luck!*
+*This course was developed to equip students with the most important skills for data-driven communication and object oriented thinking. Good luck!*

@@ -26,16 +26,6 @@
 | 9 | Block 9 | Erweiterte Tools | Tool-Vergleich |
 | 10-11 | - | Abschlussprojekt | Projekt + Präsentation |
 
-**Vorteile:**
-- ✅ Zeit zum Üben zwischen Blöcken
-- ✅ Tiefes Verständnis
-- ✅ Weniger Stress
-- ✅ Bessere Retention
-
-**Nachteile:**
-- ❌ Längere Gesamtdauer
-- ❌ Momentum kann verloren gehen
-
 ---
 
 ### Option 2: Intensivkurs (4 Wochen)
@@ -50,18 +40,6 @@
 | 2 | Block 4 | Block 5 | Block 6 | Hausaufgaben 4-6 |
 | 3 | Block 7 | Block 8 | Block 9 | Hausaufgaben 7-9 |
 | 4 | Projekt | Projekt | Präsentation | - |
-
-**Vorteile:**
-- ✅ Schneller Abschluss
-- ✅ Hohe Intensität
-- ✅ Momentum bleibt erhalten
-- ✅ Immersive Lernerfahrung
-
-**Nachteile:**
-- ❌ Sehr hoher Zeitaufwand
-- ❌ Wenig Zeit zum Üben
-- ❌ Stressig
-- ❌ Schwierig neben Arbeit/Studium
 
 ---
 
@@ -88,16 +66,6 @@
 - 15:00-16:30: Block Y, Einheit 1
 - 16:30-17:00: Q&A
 
-**Vorteile:**
-- ✅ Vereinbar mit Vollzeitjob
-- ✅ Intensive Wochenenden
-- ✅ Woche zum Üben
-- ✅ Kompakter als Semester
-
-**Nachteile:**
-- ❌ Lange Tage
-- ❌ Wochenenden blockiert
-- ❌ Ermüdung am Sonntag
 
 ---
 
@@ -114,18 +82,6 @@
 - Optional: Wöchentliche Online-Sprechstunde
 - Abgabefristen für Hausaufgaben
 - Abschlussprojekt mit Präsentation (Online)
-
-**Vorteile:**
-- ✅ Maximale Flexibilität
-- ✅ Eigenes Tempo
-- ✅ Wiederholbar
-- ✅ Ortsunabhängig
-
-**Nachteile:**
-- ❌ Weniger Interaktion
-- ❌ Selbstdisziplin erforderlich
-- ❌ Kein direktes Feedback
-- ❌ Isolation
 
 ---
 
@@ -317,7 +273,7 @@ Diese Blöcke können relativ unabhängig absolviert werden:
 
 ---
 
-## 🎓 Bewertungs-Anpassungen
+## 🎓 Bewertungs-Anpassungen - Advanced
 
 ### Vollsemester
 - 9 Hausaufgaben (60%)
@@ -382,10 +338,10 @@ Diese Blöcke können relativ unabhängig absolviert werden:
 - Abendliche Übungssessions
 
 ### Für Wochenend-Workshops
-- Längere Mittagspausen
+- Längere Mittagspausen (1x 15min. + 5min. zwischendurch)
 - Energizer-Aktivitäten
-- Wöchentliche Online-Sprechstunde
-- Slack/Discord für Kommunikation
+- //Wöchentliche Online-Sprechstunde
+- //Slack/Discord für Kommunikation
 
 ### Für Selbststudium
 - Video-Aufzeichnungen
