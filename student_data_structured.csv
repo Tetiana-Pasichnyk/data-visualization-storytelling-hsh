@@ -1,0 +1,15 @@
+Student,attended_messe,spoke_to_people,positions_seen,companies_seen,career_fields_seen,notes
+Blerina,False,False,0,,Data Analyzer,Did not attend but interested in Data Analyzer field
+Menjung,True,True,15,Quantum,Fullstack,
+Hani,True,True,7,Siemens; Nestle; Saudi Arabia; Adesso,Frontend/UX; BI,
+Hadis,True,True,3,Siemens,Web Development,
+Yarema,True,True,5,Microsoft,Software Developer,
+Viktoriia,False,False,0,,Marketing; Data Analytics,Did not attend but interested in Marketing and Data Analytics
+Andi,False,False,0,,Technician; System Administrator,Did not attend but interested in Technician and System Admin roles
+Ihor,,,,,Bundeswehr; Siemens,System Administrator,Attendance/networking status unclear; visited companies listed
+Svitlana,True,True,7,AWS; Agile Robots; Bosch; Siemens; Leibniz Uni,AI Engineer; Data Science,AI and Data Science merged in analysis
+Sofiia,True,True,5,AWS; Microsoft; Bundeswehr; Food Court,FullStack,
+Kareem,True,True,2,SAP; Microsoft; Bundeswehr; Lenovo,Frontend,
+Omar,True,True,2,Bundeswehr,,Career field not specified
+Tetiana,True,True,,Bundeswehr; BMW,Frontend,Position count not provided
+Yevhen,,,,,Samsung; Bundeswehr; BMW,FullStack,Attendance/networking/position count unclear; visited companies listed
