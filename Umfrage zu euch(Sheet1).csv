@@ -1,0 +1,17 @@
+Id;Startzeit;Fertigstellungszeit;E-Mail;Name;Wie ist dein Vorname?;Wart ihr auf der Messe?;Mit Leuten gesprochen?;Wieviele Leute gesehen?;Frage;"Total IT work experience in months? - Type: Integer (months)   - Guidance: Convert part-time to full-time equivalent (e.g., 6 months part-time = 3 months FTE)
+";How much liked you the specific topic?.Messe Satisfaction;How much liked you the specific topic?.Python Skills Satisfaction;How much liked you the specific topic?.SQL;"Welche Unternehmen gesehen, getrennt mit "","""
+1;27.04.2026 11:34;27.04.2026 11:35;anonymous;;;Ja;Ja;5;"Frontend;AI;";;Not so much;Not so much;;
+2;27.04.2026 11:33;27.04.2026 11:35;anonymous;;;Ja;Ja;10;"Frontend;AI;Technician;Fullstack;";100;Not so much;Not so much;;
+3;27.04.2026 11:34;27.04.2026 11:35;anonymous;Rowaida;;Nein;Nein;0;;;;;;No one
+4;27.04.2026 11:35;27.04.2026 11:37;anonymous;Hadis;;Ja;Ja;12;"Frontend;";;Not so much;Not so much;;Siemens 
+5;27.04.2026 11:35;27.04.2026 11:39;anonymous;Anton;;Ja;Ja;3;"AI;";40;Not so much;;;Aws, coreflux, team viewer, siemens
+6;27.04.2026 11:33;27.04.2026 11:40;anonymous;x;;Ja;Ja;2;"Technician;";220;Liked it;;;Beckhoff, AWS, Siemens, Teamviewer, SAP, LAPP, ifak, Maxon
+7;27.04.2026 11:33;27.04.2026 11:42;anonymous;Bernard;;Ja;Ja;5;"Fullstack;AI;Data Analysis;";64;Liked it;Liked it;;Amazon, Coreflux, Schwarz Digit, Microsoft, 
+8;27.04.2026 11:34;27.04.2026 11:42;anonymous;Yasser;;Ja;Ja;10;"AI;Fullstack;";10;Liked it;Liked it;;Siemens, AWS, Coreflux, Team Viewer
+9;27.04.2026 11:34;27.04.2026 11:43;anonymous;;Oleh;Ja;Ja;;"Data Analysis;AI;";;Not so much;Not so much;;
+10;27.04.2026 11:37;27.04.2026 11:43;anonymous;;Sofiia;Ja;Ja;3;"Fullstack;";1;A bit;A bit;;Microsoft, AWS, core flux, Unity, Bundeswehr
+11;27.04.2026 11:41;27.04.2026 11:44;anonymous;;Maxim;Ja;Ja;2;"Technician;";220;Liked it;Liked it;Extremely;Beckhoff, AWS, Siemens, SAP, Teamviewer, ifak, Maxon
+12;27.04.2026 11:34;27.04.2026 11:47;anonym;;;Nein;Ja;5;Data Analysis;;Not so much;;;4
+13;27.04.2026 11:45;27.04.2026 11:47;anonym;;Kareem Ramadan;Ja;Ja;2;"Frontend;Fullstack";0 months;Not so much;Liked it;Not so much;
+14;27.04.2026 11:43;27.04.2026 11:48;anonym;;Ihor;Ja;Nein;;;216 months FTE;Liked it a lot;Liked it a lot;Liked it a lot;Bundeswehr, Siemens
+15;27.04.2026 11:34;27.04.2026 11:49;anonym;;;Ja;Ja;7;"AI;Data Analysis";6;Liked it a lot;;;Siemens,  Aws, Agile Roboter 
