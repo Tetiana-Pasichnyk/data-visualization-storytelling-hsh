@@ -7,10 +7,8 @@
 ### Framework 1: Context (Warum erzähle ich das?)
 **Definiere deine Neugier (Curiosity, Intrigue)**
 
-### Framework 2: Die 3 Schritte
-```
+### Framework 2: Die 3 Schritte -
 Perceiving → Interpreting → Comprehending
-```
 
 ---
 
@@ -24,16 +22,16 @@ Perceiving → Interpreting → Comprehending
 **Beispiel 1:**
 > „Ich frage mich: Wird es im Mai warm genug für meinen Ausflug?"
 
-**Beispiel 2:**
+**Beispiel 2:** 📊 [student_performance.csv](../data/../weeks/week-2/datasets/student_performance.csv)
 > „Ich frage mich: Hilft mehr Lernzeit wirklich für bessere Noten?"
 
-**Beispiel 3:**
+**Beispiel 3:** 📊 [heart-disease.csv](../data/heart-disease.csv)
 > „Ich frage mich: Ist mein Cholesterin-Wert im normalen Bereich?"
 
-** SCHREIB Deine Antwort zu dem Plot auf:**
+** SCHREIB Deine Antwort zu dem Plot auf was du planst:**
 ```
 Meine Frage ist: ________________________________________________
-
+Ich frage mich, in welchen Regionen (Bundesländer-Städte) es wieviele Stellen zu welcher IT-Berufsgruppe gibt
 
 
 
@@ -48,16 +46,16 @@ Meine Frage ist: ________________________________________________
 **Beispiel 1:**
 > „Mein Chef fragt: Warum sinken die Verkäufe im März?"
 
-**Beispiel 2:**
+**Beispiel 2:** 📊 [car-sales.csv](../data/car-sales.csv)
 > „Ein Autohändler fragt: Wie beeinflusst der Kilometerstand den Preis?"
 
-**Beispiel 3:**
+**Beispiel 3:** 📊 [online_retail_sample.csv](../weeks/week-2/datasets/online_retail_sample.csv)
 > „Der Shop-Manager fragt: Welche Produktkategorie bringt den meisten Umsatz?"
 
 **Deine Antwort:**
 ```
 [Person] fragt: _________________________________________________
-
+Eine Bundeagentur für Arbeit fragt sich, welche IT Berufsfelder werden genau gesucht und wieviele von denen wo.
 
 
 
@@ -71,19 +69,19 @@ Meine Frage ist: ________________________________________________
 ### 3️⃣ Audience Intrigue
 **Definition:** Kombination aus **wissen, was gebraucht wird** UND **erwarten, was gebraucht werden könnte**.
 
-**Beispiel 1:**
+**Beispiel 1:** 📊 [heart-disease.csv](../data/heart-disease.csv)
 > „Ärzte brauchen Cholesterin-Daten (wissen) und könnten auch an Altersunterschieden interessiert sein (erwarten)."
 
-**Beispiel 2:**
+**Beispiel 2:** 📊 [student_performance.csv](../weeks/week-2/datasets/student_performance.csv)
 > „Studierende brauchen Informationen über Lernzeit (wissen) und könnten auch an Anwesenheitsraten interessiert sein (erwarten)."
 
-**Beispiel 3:**
+**Beispiel 3:** 📊 [online_retail_sample.csv](../weeks/week-2/datasets/online_retail_sample.csv)
 > „Online-Shop-Kunden brauchen Preisinformationen (wissen) und könnten auch an Rabatten interessiert sein (erwarten)."
 
 **Deine Antwort:**
 ```
 [Zielgruppe] braucht: ___________________________________________
-
+Jobsuchenden brauchen Stellenanzeigen für die Berufsgruppe die ihnen gefällt.
 
 
 
@@ -91,7 +89,7 @@ Meine Frage ist: ________________________________________________
 
 
 [Zielgruppe] könnte auch interessiert sein an: __________________
-
+welche Unternehmen wieviele Stellen haben offen haben
 
 
 
@@ -107,16 +105,16 @@ Meine Frage ist: ________________________________________________
 **Beispiel 1:**
 > „Stadtplaner haben nicht gefragt, aber Temperaturunterschiede zwischen Städten könnten für Klimaplanung relevant sein."
 
-**Beispiel 2:**
+**Beispiel 2:** 📊 [student_performance.csv](../weeks/week-2/datasets/student_performance.csv)
 > „Professoren haben nicht gefragt, aber der Zusammenhang zwischen Anwesenheit und Prüfungsergebnissen könnte für die Lehre relevant sein."
 
-**Beispiel 3:**
+**Beispiel 3:** 📊 [car-sales.csv](../data/car-sales.csv)
 > „Autokäufer haben nicht gefragt, aber die Beziehung zwischen Automarke und Kilometerstand könnte für Kaufentscheidungen relevant sein."
 
 **Deine Antwort:**
 ```
 Ich denke, es ist relevant, weil: _______________________________
-
+man auf Unternehmen kommt auf die man sonst nicht stoßen würde.
 
 
 
@@ -133,16 +131,16 @@ Ich denke, es ist relevant, weil: _______________________________
 **Beispiel 1:**
 > „Beim Explorieren habe ich einen unerwarteten Temperaturabfall am 28. April entdeckt."
 
-**Beispiel 2:**
+**Beispiel 2:** 📊 [student_performance.csv](../weeks/week-2/datasets/student_performance.csv)
 > „Beim Analysieren der Studentendaten habe ich entdeckt, dass Wintersemester-Studierende schlechter abschneiden als Sommersemester-Studierende."
 
-**Beispiel 3:**
+**Beispiel 3:** 📊 [online_retail_sample.csv](../weeks/week-2/datasets/online_retail_sample.csv)
 > „Beim Explorieren der Verkaufsdaten habe ich einen unerwarteten Umsatzeinbruch bei Elektronik im Februar entdeckt."
 
 **Deine Antwort:**
 ```
 Ich habe entdeckt: ______________________________________________
-
+das Business Intelligence Stellen 
 
 
 
