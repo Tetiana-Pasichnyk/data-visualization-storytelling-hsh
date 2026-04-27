@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeitsagentur Job Scraper</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .app-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            height: calc(100vh - 40px);
+        }
+
+        .main-content {
+            flex: 1;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .sidebar h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .tab:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .tab-content {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #495057;
+            font-size: 0.9em;
+        }
+
+        .control-group input,
+        .control-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: border-color 0.3s;
+        }
+
+        .control-group input:focus,
+        .control-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .btn-toggle {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-toggle:hover {
+            background: #218838;
+        }
+
+        .btn-toggle.active {
+            background: #17a2b8;
+        }
+
+        .categories-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .category-tag {
+            background: #e7f3ff;
+            color: #0066cc;
+            padding: 6px 12px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85em;
+        }
+
+        .category-tag button {
+            background: transparent;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.1em;
+            padding: 0;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 0.85em;
+        }
+
+        .charts {
+            padding: 30px;
+        }
+
+        .chart-container {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container h2 {
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+        }
+
+        #map {
+            height: 600px;
+            border-radius: 12px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-message {
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .company-list {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .company-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .company-item:hover {
+            background: #f8f9fa;
+        }
+
+        .filter-controls {
+            display: flex;
+        }
+
+        /* Collapsible job list styles */
+        .job-count-clickable {
+            color: #667eea;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .job-count-clickable:hover {
+            color: #764ba2;
+        }
+
+        .jobs-list {
+            margin-top: 10px;
+            padding-left: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .job-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .job-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .job-link:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .job-meta {
+            font-size: 0.85em;
+            color: #6c757d;
+            margin-left: 10px;
+        }
+
+        /* Location statistics styles */
+        .location-stats {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-stats h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        .stat-item.success {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .stat-item.warning {
+            background: #fff3cd;
+            border-color: #ffeaa7;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-item.success strong {
+            color: #28a745;
+        }
+
+        .stat-item.warning strong {
+            color: #ffc107;
+        }
+
+        .stat-item span {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .missing-locations {
+            margin-top: 15px;
+            border-top: 1px solid #e9ecef;
+            padding-top: 15px;
+        }
+
+        .missing-locations summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #ffc107;
+            padding: 10px;
+            background: #fff3cd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .missing-locations summary:hover {
+            background: #ffeaa7;
+        }
+
+        .missing-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .missing-job {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #ffc107;
+        }
+
+        .missing-job strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .missing-job small {
+            color: #6c757d;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .missing-job em {
+            color: #dc3545;
+            font-size: 0.9em;
+        }
+
+        .collapsible-section {
+            margin-top: 10px;
+        }
+
+        .collapse-toggle {
+            background: none;
+            border: none;
+            color: #667eea;
+            cursor: pointer;
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .collapse-toggle:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .collapse-content {
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .collapse-content.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Data Status Widget */
+        .data-status-widget {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .data-status-widget h4 {
+            color: #667eea;
+            margin: 0 0 12px 0;
+            font-size: 1.1em;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .status-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .status-label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.9em;
+        }
+
+        .status-value {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1em;
+        }
+
+        .status-date {
+            font-size: 0.8em;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .status-sync {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .status-sync.status-ok {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-sync.status-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .warning-banner strong {
+            color: #856404;
+            font-size: 1.1em;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .keywords-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .keyword-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #856404;
+        }
+
+        .keyword-tag.whole-word {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        .keyword-tag .match-type {
+            font-size: 0.75em;
+            opacity: 0.7;
+            font-weight: normal;
+        }
+
+        .keyword-tag button {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 0;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .keyword-tag button:hover {
+            opacity: 1;
+        }
+
+        .filter-controls select,
+        .filter-controls input {
+            padding: 8px 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+
+        .filter-controls button {
+            width: auto;
+            padding: 8px 16px;
+        }
+
+        /* Modal for Bundesland details */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .modal-header h2 {
+            color: #667eea;
+            margin: 0;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .city-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .city-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+
+        .city-item:hover {
+            background: #f8f9fa;
+        }
+
+        .city-name {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .city-count {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .view-toggle button {
+            flex: 1;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 1200px) {
+            .app-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                order: -1;
+            }
+
+            .main-content {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+            }
+
+            .filter-controls select,
+            .filter-controls input,
+            .filter-controls button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>📊 Arbeitsagentur Job Scraper</h1>
+                <p>Tägliche Überwachung von IT-Stellenangeboten</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('charts')">📊 Diagramme</button>
+                <button class="tab" onclick="switchTab('heatmap')">🗺️ Heatmap</button>
+                <button class="tab" onclick="switchTab('companies')">🏢 Unternehmen</button>
+            </div>
+
+            <!-- Charts Tab -->
+            <div id="tab-charts" class="tab-content active">
+                <div class="charts" id="charts">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Klicken Sie auf "Daten laden" in der Sidebar</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heatmap Tab -->
+            <div id="tab-heatmap" class="tab-content">
+                <div class="charts">
+                    <div class="chart-container">
+                        <h2>🗺️ Deutschland Heatmap - Stellenangebote Visualisierung</h2>
+                        
+                        <div class="view-toggle">
+                            <button id="btnBundeslandView" class="btn-toggle active" onclick="switchMapView('bundesland')">
+                                🗺️ Bundesland-Ansicht
+                            </button>
+                            <button id="btnCityView" class="btn-toggle" onclick="switchMapView('city')">
+                                🏙️ Stadt-Ansicht
+                            </button>
+                        </div>
+
+                        <div class="filter-controls">
+                            <select id="heatmapJobType" onchange="updateHeatmap()">
+                                <option value="">Alle Angebotsarten</option>
+                                <option value="Arbeit">Arbeit</option>
+                                <option value="Ausbildung/Duales Studium">Ausbildung/Duales Studium</option>
+                                <option value="Praktikum">Praktikum</option>
+                                <option value="Selbstständigkeit">Selbstständigkeit</option>
+                            </select>
+                            <select id="heatmapCategory" onchange="updateHeatmap()">
+                                <option value="">Alle Berufsfelder</option>
+                            </select>
+                            <button class="btn-secondary" onclick="loadHeatmapData()">🔄 Aktualisieren</button>
+                        </div>
+                        
+                        <div id="heatmapStats" style="margin-bottom: 15px; color: #6c757d; font-weight: 600;"></div>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Companies Tab -->
+            <div id="tab-companies" class="tab-content">
+                <div class="charts">
+                    <div class="chart-container">
+                        <h2>🏢 Unternehmen-Analyse</h2>
+                        <div class="filter-controls">
+                            <select id="companyJobType" onchange="updateCompaniesView()">
+                                <option value="Arbeit">Arbeit</option>
+                                <option value="Ausbildung/Duales Studium">Ausbildung/Duales Studium</option>
+                                <option value="Praktikum">Praktikum</option>
+                                <option value="Selbstständigkeit">Selbstständigkeit</option>
+                            </select>
+                            <input type="number" id="companyLimit" value="100" min="5" max="200"
+                                   onchange="updateCompaniesView()" placeholder="Anzahl">
+                            <button class="btn-secondary" onclick="exportCompanies()">📥 Exportieren</button>
+                        </div>
+                        <div id="companiesStats" style="margin-bottom: 15px; color: #6c757d; font-weight: 600;"></div>
+                        <div class="company-list" id="companiesList"></div>
+                        <div class="chart-wrapper">
+                            <canvas id="companiesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>⚙️ Einstellungen</h2>
+            
+            <div id="sidebarStatus"></div>
+
+            <div class="control-group">
+                <label for="newCategory">Neues Berufsfeld:</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="newCategory" placeholder="z.B. DevOps Engineer">
+                    <button class="btn-primary" onclick="addCategory()" style="width: auto; padding: 10px 15px;">➕</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Aktuelle Berufsfelder:</label>
+                <div class="categories-list" id="categoriesList"></div>
+            </div>
+
+            <div class="control-group">
+                <label>🚫 Ausschluss-Keywords:</label>
+                <p style="font-size: 0.85em; color: #6c757d; margin-bottom: 10px;">
+                    Jobs mit diesen Begriffen werden herausgefiltert
+                </p>
+                <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                    <input type="text" id="newExcludeKeyword" placeholder="z.B. Senior, Manager">
+                    <select id="keywordMatchType" style="width: auto; padding: 8px;">
+                        <option value="whole">Ganzes Wort</option>
+                        <option value="partial">Teil des Wortes</option>
+                    </select>
+                    <button class="btn-primary" onclick="addExcludeKeyword()" style="width: auto; padding: 10px 15px;">➕</button>
+                </div>
+                <div class="keywords-list" id="excludeKeywordsList"></div>
+            </div>
+
+            <div class="control-group">
+                <label>✅ Include-Keywords (Optional):</label>
+                <p style="font-size: 0.85em; color: #6c757d; margin-bottom: 10px;">
+                    Nur Jobs MIT diesen Begriffen werden angezeigt
+                </p>
+                <div style="display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap;">
+                    <input type="text" id="newIncludeKeyword" placeholder="z.B. Junior" style="flex: 1; min-width: 120px;">
+                    <select id="includeKeywordMatchType" style="width: auto; padding: 8px;">
+                        <option value="whole">Ganzes Wort</option>
+                        <option value="partial">Teil des Wortes</option>
+                    </select>
+                    <button class="btn-primary" onclick="addIncludeKeyword()" style="width: auto; padding: 10px 15px;">➕</button>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <button onclick="addSuggestedIncludeKeyword('Junior')"
+                            style="background:#17a2b8;color:white;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;font-size:0.85em;margin-right:5px;">
+                        + Junior
+                    </button>
+                    <span style="font-size:0.8em;color:#6c757d;">← Vorschlag</span>
+                </div>
+                <div class="keywords-list" id="includeKeywordsList"></div>
+            </div>
+
+            <div class="control-group">
+                <label>Daten aktualisieren:</label>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="scrapeDetailed()" style="font-size: 0.95em;">
+                        🔄 Vollständig aktualisieren
+                        <small style="display:block;font-size:0.8em;opacity:0.8;margin-top:3px;">Empfohlen - Alle Tabs synchron</small>
+                    </button>
+                    <button class="btn-secondary" onclick="scrapeNow()" style="font-size: 0.95em;">
+                        ⚡ Schnell-Check
+                        <small style="display:block;font-size:0.8em;opacity:0.8;margin-top:3px;">Nur Diagramme</small>
+                    </button>
+                </div>
+            </div>
+
+            <div id="dataStatusContainer" class="control-group"></div>
+
+            <div class="control-group">
+                <label>Weitere Aktionen:</label>
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="loadData()">📊 Daten laden</button>
+                    <button class="btn-secondary" onclick="loadHeatmapData()">🗺️ Heatmap laden</button>
+                    <button class="btn-secondary" onclick="loadCompaniesData()">🏢 Unternehmen laden</button>
+                    <button class="btn-secondary" onclick="exportData()">📥 Daten exportieren</button>
+                    <button class="btn-danger" onclick="clearData()">🗑️ Daten löschen</button>
+                </div>
+            </div>
+
+            <div class="stats" id="stats"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Bundesland Details -->
+    <div id="bundeslandModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Details</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
