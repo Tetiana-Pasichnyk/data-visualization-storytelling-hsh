@@ -1,0 +1,25 @@
+order_id,order_date,category,units_sold,revenue,customer_segment,discount_pct
+1001,2026-01-05,Elektronik,2,899,Consumer,5
+1002,2026-01-08,Buecher,5,120,Consumer,0
+1003,2026-01-12,Kleidung,3,210,Corporate,10
+1004,2026-01-18,Haushalt,4,340,Home Office,15
+1005,2026-02-02,Elektronik,1,1299,Corporate,5
+1006,2026-02-06,Buecher,7,168,Consumer,0
+1007,2026-02-11,Kleidung,6,420,Consumer,20
+1008,2026-02-20,Haushalt,3,255,Home Office,10
+1009,2026-03-03,Elektronik,2,999,Corporate,0
+1010,2026-03-09,Buecher,8,192,Consumer,5
+1011,2026-03-15,Kleidung,4,295,Home Office,15
+1012,2026-03-22,Haushalt,5,410,Consumer,10
+1013,2026-04-01,Elektronik,3,1499,Corporate,10
+1014,2026-04-07,Buecher,6,144,Home Office,0
+1015,2026-04-14,Kleidung,5,360,Consumer,5
+1016,2026-04-21,Haushalt,7,560,Corporate,20
+1017,2026-05-04,Elektronik,1,799,Consumer,0
+1018,2026-05-10,Buecher,9,225,Consumer,10
+1019,2026-05-16,Kleidung,7,490,Corporate,15
+1020,2026-05-24,Haushalt,6,510,Home Office,5
+1021,2026-06-03,Elektronik,4,1899,Corporate,10
+1022,2026-06-08,Buecher,10,260,Consumer,0
+1023,2026-06-12,Kleidung,8,575,Home Office,20
+1024,2026-06-19,Haushalt,5,430,Consumer,10
